@@ -1,9 +1,14 @@
-# api documentation for  [subdomain (v1.2.0)](http://github.com/edwardhotchkiss/subdomain)  [![npm package](https://img.shields.io/npm/v/npmdoc-subdomain.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-subdomain) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-subdomain.svg)](https://travis-ci.org/npmdoc/node-npmdoc-subdomain)
+# npmdoc-subdomain
+
+#### api documentation for  [subdomain (v1.2.0)](http://github.com/edwardhotchkiss/subdomain)  [![npm package](https://img.shields.io/npm/v/npmdoc-subdomain.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-subdomain) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-subdomain.svg)](https://travis-ci.org/npmdoc/node-npmdoc-subdomain)
+
 #### Node.js Express Subdomain Middleware.
 
-[![NPM](https://nodei.co/npm/subdomain.png?downloads=true)](https://www.npmjs.com/package/subdomain)
+[![NPM](https://nodei.co/npm/subdomain.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/subdomain)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-subdomain/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-subdomain_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-subdomain/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-subdomain/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-subdomain/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-subdomain/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-subdomain/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-subdomain/build/screenCapture.npmPackageListing.svg)
 
@@ -17,20 +22,17 @@
 
 {
     "author": {
-        "name": "Edward Hotchkiss",
-        "email": "edward@edwardhotchkiss.com"
+        "name": "Edward Hotchkiss"
     },
     "bugs": {
         "url": "https://github.com/edwardhotchkiss/subdomain/issues"
     },
     "contributors": [
         {
-            "name": "Edward Hotchkiss",
-            "email": "edward@edwardhotchkiss.com"
+            "name": "Edward Hotchkiss"
         },
         {
-            "name": "Kevin Sakhuja",
-            "email": "kevin.sakhuja@gmail.com"
+            "name": "Kevin Sakhuja"
         },
         {
             "name": "Jed Dawson"
@@ -63,30 +65,19 @@
     "main": "./lib/subdomain",
     "maintainers": [
         {
-            "name": "edwardhotchkiss",
-            "email": "edwardhotchkiss@me.com"
+            "name": "edwardhotchkiss"
         }
     ],
     "name": "subdomain",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/edwardhotchkiss/subdomain.git"
     },
-    "version": "1.2.0"
+    "version": "1.2.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module subdomain](#apidoc.module.subdomain)
-
-
-
-# <a name="apidoc.module.subdomain"></a>[module subdomain](#apidoc.module.subdomain)
 
 
 
