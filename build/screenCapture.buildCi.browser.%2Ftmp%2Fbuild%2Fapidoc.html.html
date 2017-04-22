@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/edwardhotchkiss/subdomain"
-
-    >subdomain (v1.2.0)</a>
+    <a href="http://github.com/edwardhotchkiss/subdomain">subdomain (v1.2.0)</a>
 </h1>
 <h4>Node.js Express Subdomain Middleware.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.subdomain">module subdomain</a><ol>
 
@@ -91,38 +84,38 @@
   options = options || {};
 
   if (!options.base) {
-    throw new Error(&#x27;options.base required!&#x27;);
+    throw new Error('options.base required!');
   } else {
     options.removeWWW = options.removeWWW || false;
     options.debug = options.debug || false;
     options.ignoreWWW = options.ignoreWWW || false;
-    options.prefix = options.prefix || &#x27;subdomain&#x27;;
+    options.prefix = options.prefix || 'subdomain';
   };
 
   // return middleware
   return function(request, response, next) {
 
-    // get host &#x26; protocol
+    // get host &amp; protocol
     var host = request.headers.host
-      , protocol = request.socket.encrypted ? &#x27;https&#x27; : &#x27;http&#x27;;
+      , protocol = request.socket.encrypted ? 'https' : 'http';
 
-    // remove &#x27;www&#x27; prefix from URL? (tacky, right?)
+    // remove 'www' prefix from URL? (tacky, right?)
     if (options.removeWWW === true) {
       if (/^www/.test(host)) {
-        return response.redirect(protocol + &#x27;://&#x27; + host.replace(/^www\./, &#x27;&#x27;) + request.url);
+        return response.redirect(protocol + '://' + host.replace(/^www\./, '') + request.url);
       };
     };
 
     // subdomain specific middleware
-    if (host === options.base || host === &#x27;localhost:8000&#x27; || (options.ignoreWWW &#x26;&#x26; /^www\./.test(host))) {
+    if (host === options.base || host === 'localhost:8000' || (options.ignoreWWW &amp;&amp; /^www\./.test(host))) {
       // not a subdomain or ignoring www subdomain
       next();
     } else {
       // test for subdomain
-      var matches = host.match(new RegExp(&#x27;(.*)\.&#x27; + options.base));
+      var matches = host.match(new RegExp('(.*)\.' + options.base));
       // subdomain
-      if (matches &#x26;&#x26; matches.length === 2) {
-        request.url = &#x27;/&#x27; + options.prefix + &#x27;/&#x27; + matches[1] + request.url;
+      if (matches &amp;&amp; matches.length === 2) {
+        request.url = '/' + options.prefix + '/' + matches[1] + request.url;
         next();
       } else {
         next();
@@ -143,3 +136,4 @@
     ]
 </div>
 </div>
+</body></html>

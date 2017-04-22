@@ -61,12 +61,79 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.subdomain">module subdomain</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.subdomain.subdomain">
+            function <span class="apidocSignatureSpan"></span>subdomain
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.subdomain" id="apidoc.module.subdomain">module subdomain</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.subdomain.subdomain" id="apidoc.element.subdomain.subdomain">
+        function <span class="apidocSignatureSpan"></span>subdomain
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subdomain = function (options) {
+
+  // options?
+  options = options || {};
+
+  if (!options.base) {
+    throw new Error(&#x27;options.base required!&#x27;);
+  } else {
+    options.removeWWW = options.removeWWW || false;
+    options.debug = options.debug || false;
+    options.ignoreWWW = options.ignoreWWW || false;
+    options.prefix = options.prefix || &#x27;subdomain&#x27;;
+  };
+
+  // return middleware
+  return function(request, response, next) {
+
+    // get host &#x26; protocol
+    var host = request.headers.host
+      , protocol = request.socket.encrypted ? &#x27;https&#x27; : &#x27;http&#x27;;
+
+    // remove &#x27;www&#x27; prefix from URL? (tacky, right?)
+    if (options.removeWWW === true) {
+      if (/^www/.test(host)) {
+        return response.redirect(protocol + &#x27;://&#x27; + host.replace(/^www\./, &#x27;&#x27;) + request.url);
+      };
+    };
+
+    // subdomain specific middleware
+    if (host === options.base || host === &#x27;localhost:8000&#x27; || (options.ignoreWWW &#x26;&#x26; /^www\./.test(host))) {
+      // not a subdomain or ignoring www subdomain
+      next();
+    } else {
+      // test for subdomain
+      var matches = host.match(new RegExp(&#x27;(.*)\.&#x27; + options.base));
+      // subdomain
+      if (matches &#x26;&#x26; matches.length === 2) {
+        request.url = &#x27;/&#x27; + options.prefix + &#x27;/&#x27; + matches[1] + request.url;
+        next();
+      } else {
+        next();
+      }
+    };
+  };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
